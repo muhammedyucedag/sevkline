@@ -1,0 +1,6 @@
+﻿services:
+  sevkline:
+    image: sevkline
+    build:
+      context: .
+      dockerfile: SevkLine/Dockerfile
