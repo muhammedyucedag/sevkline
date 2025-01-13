@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevkLine", "SevkLine\SevkLine.csproj", "{224A8393-7CE8-493B-A424-FA031C0ABA84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevkLine.Web", "SevkLine.Web\SevkLine.Web.csproj", "{224A8393-7CE8-493B-A424-FA031C0ABA84}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0C8FF2A8-7783-405B-9613-F2E652AAE553}"
 	ProjectSection(SolutionItems) = preProject
 		compose.yaml = compose.yaml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevkLine.Application", "SevkLine.Application\SevkLine.Application.csproj", "{DC8033A4-156F-47FE-BE0F-BAD741235C59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevkLine.Infrastructure", "SevkLine.Infrastructure\SevkLine.Infrastructure.csproj", "{70DA6899-9A89-41C3-A190-E26C3A4152AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevkLine.Domain", "SevkLine.Domain\SevkLine.Domain.csproj", "{EDD33B0C-009E-495E-8018-3968934141AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,5 +23,17 @@ Global
 		{224A8393-7CE8-493B-A424-FA031C0ABA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{224A8393-7CE8-493B-A424-FA031C0ABA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{224A8393-7CE8-493B-A424-FA031C0ABA84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC8033A4-156F-47FE-BE0F-BAD741235C59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC8033A4-156F-47FE-BE0F-BAD741235C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC8033A4-156F-47FE-BE0F-BAD741235C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC8033A4-156F-47FE-BE0F-BAD741235C59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70DA6899-9A89-41C3-A190-E26C3A4152AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70DA6899-9A89-41C3-A190-E26C3A4152AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70DA6899-9A89-41C3-A190-E26C3A4152AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70DA6899-9A89-41C3-A190-E26C3A4152AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDD33B0C-009E-495E-8018-3968934141AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDD33B0C-009E-495E-8018-3968934141AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDD33B0C-009E-495E-8018-3968934141AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDD33B0C-009E-495E-8018-3968934141AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
