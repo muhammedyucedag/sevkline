@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevkLine", "SevkLine\SevkLine.csproj", "{224A8393-7CE8-493B-A424-FA031C0ABA84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0C8FF2A8-7783-405B-9613-F2E652AAE553}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{224A8393-7CE8-493B-A424-FA031C0ABA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{224A8393-7CE8-493B-A424-FA031C0ABA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{224A8393-7CE8-493B-A424-FA031C0ABA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224A8393-7CE8-493B-A424-FA031C0ABA84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
