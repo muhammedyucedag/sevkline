@@ -18,4 +18,17 @@
       <Folder Include="Controllers\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\SevkLine.Application\SevkLine.Application.csproj" />
+      <ProjectReference Include="..\SevkLine.Domain\SevkLine.Domain.csproj" />
+      <ProjectReference Include="..\SevkLine.Infrastructure\SevkLine.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+    </ItemGroup>
+
 </Project>
