@@ -8,14 +8,14 @@ public class AppUserConfiguration : IEntityTypeConfiguration<AppUser>
 {
     public void Configure(EntityTypeBuilder<AppUser> builder)
     {
-        builder.Property(u => u.NameSurname).IsRequired().HasMaxLength(200);
-        builder.Property(u => u.RefreshToken).HasMaxLength(500);
-        builder.Property(u => u.RefreshTokenEndDate).IsRequired(false);
+        builder.Property(u => u.NameSurname)
+            .IsRequired()
+            .HasMaxLength(200);
 
-        //Relations
-        builder.HasMany(u => u.UserRoles)
-            .WithOne(ur => ur.User)
-            .HasForeignKey(ur => ur.UserId)
-            .IsRequired();
+        builder.Property(u => u.RefreshToken)
+            .HasMaxLength(500);
+
+        builder.Property(u => u.RefreshTokenEndDate)
+            .IsRequired(false);
     }
 }
