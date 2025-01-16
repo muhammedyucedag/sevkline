@@ -8,11 +8,8 @@ public class AppRoleConfiguration : IEntityTypeConfiguration<AppRole>
 {
     public void Configure(EntityTypeBuilder<AppRole> builder)
     {
-        builder.Property(r => r.Name).IsRequired().HasMaxLength(200);
-
-        builder.HasMany(r => r.UserRoles)
-            .WithOne(ur => ur.Role)
-            .HasForeignKey(ur => ur.RoleId)
-            .IsRequired();
+        builder.Property(r => r.Name)
+            .IsRequired()
+            .HasMaxLength(200);
     }
 }

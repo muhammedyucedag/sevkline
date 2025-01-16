@@ -1,12 +1,13 @@
 using AutoMapper;
 using MediatR;
+using Microsoft.AspNetCore.Identity;
 using SevkLine.Application.Role.Base;
 using SevkLine.Domain.Entities.Identity;
 using SevkLine.Infrastructure.Persistence;
 
 namespace SevkLine.Application.Role.Command;
 
-public record CreateRoleCommand : RoleBaseCommand, IRequest<Guid>
+public record CreateRoleCommand : RoleBaseCommand, IRequest<string>
 {
     private class Mapping : Profile
     {
@@ -24,14 +25,15 @@ public class CreateRoleValidator : RoleBaseCommandValidator<CreateRoleCommand>
     }
 }
 
-public class CreateBranchCommandHandler(ApplicationDbContext context, IMapper mapper) : IRequestHandler<CreateRoleCommand, Guid>
+public class CreateRoleCommandHandler(RoleManager<AppRole> roleManager, IMapper mapper) : IRequestHandler<CreateRoleCommand, string>
 {
-    public async Task<Guid> Handle(CreateRoleCommand request, CancellationToken cancellationToken)
+    public async Task<string> Handle(CreateRoleCommand request, CancellationToken cancellationToken)
     {
         var role = mapper.Map<AppRole>(request);
+        
+        role.Id = Guid.NewGuid().ToString();
 
-        await context.Roles.AddAsync(role, cancellationToken);
-        await context.SaveChangesAsync(cancellationToken);
+        await roleManager.CreateAsync(role);
 
         return role.Id;
     }
