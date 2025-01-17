@@ -15,4 +15,20 @@ public class RolesController : ControllerBase
         var result = await sender.Send(command);
         return Ok(result);
     }
+    
+    [HttpPut]
+    public async Task<IActionResult> UpdateRole([FromServices] ISender sender, Guid id, [AsParameters] UpdateRoleCommand command)
+    {
+        if (id.ToString() != command.Id) return BadRequest();  
+        
+        var result = await sender.Send(command);
+        return Ok(result);
+    }
+        
+    [HttpDelete]
+    public async Task<IActionResult> DeleteRole([FromServices] ISender sender, string id)
+    {
+        await sender.Send(new DeleteRoleCommand(id));
+        return NoContent();
+    }
 }
