@@ -13,6 +13,8 @@
 
     <ItemGroup>
       <Folder Include="AppUser\" />
+      <Folder Include="Common\" />
+      <Folder Include="Departments\Queries\" />
       <Folder Include="RefreshToken\" />
     </ItemGroup>
 
