@@ -1,7 +1,7 @@
 using FluentValidation;
 using SevkLine.Domain.Constants;
 
-namespace SevkLine.Application.Role.Base;
+namespace SevkLine.Application.Roles.Base;
 
 public record RoleBaseCommand
 {

@@ -7,8 +7,8 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_USER: sevkline
-      POSTGRES_PASSWORD: e*HyQt9AY}Qs6Qw%
-      POSTGRES_DB: SevkLineDb
+      POSTGRES_PASSWORD: e*ZyQ?t9.AY}Ss6Qw%
+      POSTGRES_DB: sevklineDB
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: always

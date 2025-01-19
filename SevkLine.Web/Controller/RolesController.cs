@@ -1,7 +1,6 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using SevkLine.Application.Role.Base;
-using SevkLine.Application.Role.Command;
+using SevkLine.Application.Roles.Command;
 
 namespace SevkLine.Controller;
 

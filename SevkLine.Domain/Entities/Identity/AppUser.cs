@@ -14,7 +14,6 @@ namespace SevkLine.Domain.Entities.Identity
         public required string CityName { get; set; }
         public string? RefreshToken { get; set; }
         public string? EmergencyContactNumber { get; set; }
-        public DateTime? RefreshTokenEndDate { get; set; }
 
         public bool IsDeleted { get; set; }
         public DateTimeOffset? DeletedAt { get; set; }

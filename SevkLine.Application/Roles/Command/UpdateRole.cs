@@ -3,11 +3,11 @@ using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using SevkLine.Application.Role.Base;
+using SevkLine.Application.Roles.Base;
 using SevkLine.Domain.Entities.Identity;
 using SevkLine.Infrastructure.Persistence;
 
-namespace SevkLine.Application.Role.Command;
+namespace SevkLine.Application.Roles.Command;
 
 public record UpdateRoleCommand : RoleBaseCommand, IRequest<Unit>
 {

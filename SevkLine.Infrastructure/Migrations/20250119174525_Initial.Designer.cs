@@ -12,8 +12,8 @@ using SevkLine.Infrastructure.Persistence;
 namespace SevkLine.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250119142017_UPD_Department_Entity_Update")]
-    partial class UPD_Department_Entity_Update
+    [Migration("20250119174525_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -143,9 +143,6 @@ namespace SevkLine.Infrastructure.Migrations
                     b.Property<DateTimeOffset?>("DeletedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid?>("DeletedBy")
-                        .HasColumnType("uuid");
-
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("boolean");
 
@@ -219,9 +216,6 @@ namespace SevkLine.Infrastructure.Migrations
                     b.Property<Guid>("DepartmentId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid?>("DepartmentId1")
-                        .HasColumnType("uuid");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
@@ -278,9 +272,6 @@ namespace SevkLine.Infrastructure.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("character varying(1000)");
 
-                    b.Property<DateTime?>("RefreshTokenEndDate")
-                        .HasColumnType("timestamp with time zone");
-
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("text");
 
@@ -294,8 +285,6 @@ namespace SevkLine.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("DepartmentId");
-
-                    b.HasIndex("DepartmentId1");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -361,14 +350,10 @@ namespace SevkLine.Infrastructure.Migrations
             modelBuilder.Entity("SevkLine.Domain.Entities.Identity.AppUser", b =>
                 {
                     b.HasOne("SevkLine.Domain.Entities.Department", "Department")
-                        .WithMany()
+                        .WithMany("AppUsers")
                         .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.HasOne("SevkLine.Domain.Entities.Department", null)
-                        .WithMany("AppUsers")
-                        .HasForeignKey("DepartmentId1");
 
                     b.Navigation("Department");
                 });

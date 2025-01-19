@@ -1,5 +1,5 @@
 using AutoMapper;
-using SevkLine.Application.Role.Base;
+using SevkLine.Application.Roles.Base;
 using SevkLine.Domain.Entities.Identity;
 
 namespace SevkLine.Application.Role.Queries.Dtos;

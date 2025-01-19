@@ -12,9 +12,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="AppUser\" />
       <Folder Include="Common\" />
       <Folder Include="RefreshToken\" />
+      <Folder Include="Users\Queries\" />
     </ItemGroup>
 
     <ItemGroup>
