@@ -16,11 +16,10 @@ public class AppUserConfiguration : IEntityTypeConfiguration<AppUser>
         builder.Property(u => u.CityName).IsRequired().HasMaxLength(ConfigurationConsts.MaxCityNameLength);
         builder.Property(x => x.EmergencyContactNumber).HasMaxLength(ConfigurationConsts.MaxPhoneNumberLength);
         builder.Property(u => u.RefreshToken).HasMaxLength(ConfigurationConsts.MaxRefreshTokenLength);
-        builder.Property(u => u.RefreshTokenEndDate).IsRequired(false);
         builder.Property(x => x.DepartmentId).IsRequired();
         
         builder.HasOne(u => u.Department)
-            .WithMany()
+            .WithMany(d => d.AppUsers)
             .HasForeignKey(u => u.DepartmentId)
             .OnDelete(DeleteBehavior.Restrict);
     }

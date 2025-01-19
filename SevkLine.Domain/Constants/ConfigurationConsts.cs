@@ -18,6 +18,7 @@ public static class ConfigurationConsts
     public const int MaxPostalCodeLength = 12;
     public const int MaxPhoneNumberLength = 64;
     public const int MaxElectronicMailLength = 256;
+    public const int MaxPasswordLength = 32;
     public const int MaxDescriptionLength = 256;
     public const int MaxYearLength = 4;
     public const int MaxMonthLength = 2;

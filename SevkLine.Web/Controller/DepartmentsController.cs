@@ -6,7 +6,6 @@ using SevkLine.Application.Departments.Command;
 using SevkLine.Application.Departments.Queries.Dtos;
 using SevkLine.Application.Departments.Queries.GetDepartmentById;
 using SevkLine.Application.Departments.Queries.GetDepartments;
-using SevkLine.Application.Role.Command;
 using SevkLine.Domain.Entities;
 
 namespace SevkLine.Controller;

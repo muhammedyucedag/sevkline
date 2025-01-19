@@ -2,10 +2,10 @@ using Ardalis.GuardClauses;
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using SevkLine.Application.Role.Base;
+using SevkLine.Application.Roles.Base;
 using SevkLine.Infrastructure.Persistence;
 
-namespace SevkLine.Application.Role.Command;
+namespace SevkLine.Application.Roles.Command;
 
 public record DeleteRoleCommand(string Id) : RoleBaseCommand, IRequest<Unit>;
 
