@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using SevkLine.Application.Departments.Command;
 using SevkLine.Application.Departments.Queries.Dtos;
 using SevkLine.Application.Departments.Queries.GetDepartmentById;

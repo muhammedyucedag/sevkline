@@ -22,6 +22,5 @@ namespace SevkLine.Domain.Entities.Identity
         
         //Relations
         public required Department Department { get; set; }
-
     }
 }
