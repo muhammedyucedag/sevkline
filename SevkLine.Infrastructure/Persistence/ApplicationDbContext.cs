@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
+using SevkLine.Domain.Common;
 using SevkLine.Domain.Entities;
 using SevkLine.Domain.Entities.Identity;
 using SevkLine.Infrastructure.Configurations;
@@ -28,14 +29,63 @@ namespace SevkLine.Infrastructure.Persistence
     public class ApplicationDbContext : IdentityDbContext<AppUser, AppRole, string>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+
         public DbSet<Department> Departments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            
+
             modelBuilder.ApplyConfiguration(new AppUserConfiguration());
             modelBuilder.ApplyConfiguration(new AppRoleConfiguration());
+        }
+
+        public override int SaveChanges()
+        {
+            UpdateEntities();
+            return base.SaveChanges();
+        }
+
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            UpdateEntities();
+            return await base.SaveChangesAsync(cancellationToken);
+        }
+
+        private void UpdateEntities()
+        {
+            var utcNow = DateTimeOffset.UtcNow;
+
+            foreach (var entry in ChangeTracker.Entries())
+            {
+                switch (entry.State)
+                {
+                    case EntityState.Added:
+                        if (entry.Entity is AuditableEntity auditableEntity)
+                        {
+                            auditableEntity.Created = utcNow;
+                            auditableEntity.LastModified = utcNow;
+                        }
+                        break;
+
+                    case EntityState.Modified:
+                        if (entry.Entity is AuditableEntity auditableEntityModified)
+                        {
+                            auditableEntityModified.LastModified = utcNow;
+                        }
+                        break;
+
+                    case EntityState.Deleted:
+                        if (entry.Entity is ISoftDeleteEntity softDeleteEntity)
+                        {
+                            softDeleteEntity.IsDeleted = true;
+                            softDeleteEntity.DeletedAt = utcNow;
+
+                            entry.State = EntityState.Modified;
+                        }
+                        break;
+                }
+            }
         }
     }
 }

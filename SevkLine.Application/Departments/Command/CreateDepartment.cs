@@ -8,7 +8,7 @@ using SevkLine.Infrastructure.Persistence;
 
 namespace SevkLine.Application.Departments.Command;
 
-public class CreateDepartmentCommand : DepartmentBaseCommand, IRequest<Guid>
+public record CreateDepartmentCommand : DepartmentBaseCommand, IRequest<Guid>
 {
     private class Mapping : Profile
     {

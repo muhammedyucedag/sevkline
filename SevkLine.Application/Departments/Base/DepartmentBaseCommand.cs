@@ -3,7 +3,7 @@ using SevkLine.Domain.Constants;
 
 namespace SevkLine.Application.Departments.Base;
 
-public class DepartmentBaseCommand
+public record DepartmentBaseCommand
 {
     /// <summary>
     /// Departman Adı
