@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    container_name: sevkline_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: sevkline
+      POSTGRES_PASSWORD: e*HyQt9AY}Qs6Qw%
+      POSTGRES_DB: SevkLineDb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:
